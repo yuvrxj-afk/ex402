@@ -1,8 +1,11 @@
 require("dotenv").config();
 const express = require("express");
 const { paymentMiddleware } = require("x402-express");
+const cors = require("cors");
 
 const app = express();
+
+app.use(cors()); // allow all origins for dev
 
 const routes = {
   "GET /ad-data": {
